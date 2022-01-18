@@ -102,7 +102,13 @@ $ python tasks.py report # Statistics"""
         self.write_current()
 
     def ls(self):
-        pass
+        for index, priority in enumerate(sorted(self.current_items.keys())):
+            print(f"{index+1}. {self.current_items[priority]} [{priority}]")
 
     def report(self):
-        pass
+        print(f"Pending : {len(self.current_items.keys())}")
+        for index, priority in enumerate(sorted(self.current_items.keys())):
+            print(f"{index+1}. {self.current_items[priority]} [{priority}]")
+        print(f"\nCompleted : {len(self.completed_items)}")
+        for index, task in enumerate(self.completed_items):
+            print(f"{index+1}. {task}")
