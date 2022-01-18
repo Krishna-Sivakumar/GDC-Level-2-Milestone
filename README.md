@@ -2,6 +2,10 @@ In This milestone you will be implementing a basic command line program that let
 
 The specification for this pogram is as follows,
 
+## Final Result
+###### All tests passing:
+![Proof of task completed](completed.png)
+
 ## Specification
 
 You are asked to build a command line program that lets you manage your tasks. Each task is associated with a priority, the priority is a number that denotes how important a task is, note that the value of the priority is inversed ( lower the value highest the priority).
@@ -116,3 +120,4 @@ The test.py file will run your program and compare the output with the expected 
 You can find the incomplete code and the instructions to complete it in the following GitHub repository. ( Fork this repo to get started )
 
 https://github.com/DjangoForAll/GDC-Level-2-Milestone
+
