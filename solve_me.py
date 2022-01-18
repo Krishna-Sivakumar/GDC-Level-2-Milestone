@@ -63,7 +63,19 @@ $ python tasks.py report # Statistics"""
         )
 
     def add(self, args):
-        pass
+        priority, text = int(args[0]), args[1]
+        if not priority in self.current_items:
+            print(f"Added task: \"{text}\" with priority {priority}")
+            self.current_items[priority] = text
+        else:
+            print(f"Added task: \"{text}\" with priority {priority}")
+            while priority in self.current_items:
+                temp = self.current_items[priority]
+                self.current_items[priority] = text
+                text = temp
+                priority += 1
+            self.current_items[priority] = text
+        self.write_current()
 
     def done(self, args):
         pass
