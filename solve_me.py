@@ -78,10 +78,28 @@ $ python tasks.py report # Statistics"""
         self.write_current()
 
     def done(self, args):
-        pass
+        priority = int(args[0])
+        if priority in self.current_items:
+            item = self.current_items[priority]
+            del self.current_items[priority]
+
+            self.completed_items.append(item)
+            print("Marked item as done.")
+            self.write_current()
+            self.write_completed()
+        else:
+            print(
+                f"Error: no incomplete item with priority {priority} exists.")
 
     def delete(self, args):
-        pass
+        priority = int(args[0])
+        if priority in self.current_items:
+            del self.current_items[priority]
+            print(f"Deleted item with priority {priority}")
+        else:
+            print(
+                f"Error: item with priority {priority} does not exist. Nothing deleted.")
+        self.write_current()
 
     def ls(self):
         pass
